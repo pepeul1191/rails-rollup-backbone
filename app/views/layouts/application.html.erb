@@ -8,10 +8,11 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <link rel="stylesheet" type="text/css" href="<%= MyApp::Application::STATIC_URL %>dist/bundle.css">
   </head>
 
   <body>
     <%= yield %>
-    <script src="<%= MyApp::Application::STATIC_URL %>dist/bundle.min.js"></script>
+    <script src="<%= MyApp::Application::STATIC_URL %>dist/bundle.js"></script>
   </body>
 </html>

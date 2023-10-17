@@ -1,5 +1,6 @@
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
+import css from 'rollup-plugin-css-only';
 import babel from 'rollup-plugin-babel';
 import { terser } from 'rollup-plugin-terser';
 import livereload from 'rollup-plugin-livereload'; // Importa el complemento
@@ -20,6 +21,9 @@ const Demo = {
       exclude: 'node_modules/**', // Excluye la compilación de módulos de node_modules
     }),
     production ?  '' : livereload('dist'), // Configura el complemento
+    css({
+      output: production ?  'bundle.min.css' : 'bundle.css'
+    })
   ],
 };
 

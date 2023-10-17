@@ -1,6 +1,7 @@
 import Backbone from 'backbone';
 import _ from 'underscore';
 import $ from 'jquery';
+import './styles.css';
 
 var ItemModel = Backbone.Model.extend({
   defaults: {
